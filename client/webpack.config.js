@@ -21,13 +21,30 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'webpack Plugin'
+        title: 'Text Editor'
       }),
       new InjectManifest({
         swSrc: './src/sw.js',
-        swDest: 'service-worker.js',
+        swDest: './src-sw.js',
       }),
-      new WorkboxPlugin.GenerateSW()
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'Text Editor',
+        short_name: 'Editor',
+        description: 'just another test Editor!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
 
     ],
     // added and lets test
