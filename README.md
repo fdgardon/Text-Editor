@@ -38,6 +38,7 @@ WHEN I deploy to Heroku
 THEN I should have proper build scripts for a webpack application
 
 ## Image of Application
+![Screen Shot 2023-05-10 at 10 50 08 PM (2)](https://github.com/fdgardon/Text-Editor/assets/119641606/8c6fbd1c-2902-4916-9a26-6d8dc1cc5497)
 
 
 ## Mock-Up
